@@ -1,7 +1,7 @@
 HANDOUTS:=$(patsubst %.md,%_handout.pdf,$(wildcard [!R][!E][!A][!D]*.md))
 SLIDES:=$(patsubst %.md,%_slides.pdf,$(wildcard [!R][!E][!A][!D]*.md))
 
-DO_PANDOC=pandoc --filter pandoc-citeproc -o
+DO_PANDOC=pandoc --citeproc -o
 
 all: handouts slides
 
