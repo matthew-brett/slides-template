@@ -1,6 +1,9 @@
 # A talk template
 
-Rename the `the_talk.md` file.
+Rename the `talk_slides.md` file to `something_slides.md`. The `_slides` suffix
+is the pattern identifying the pages to be built.
+
+Then:
 
 ```
 git submodule update --init

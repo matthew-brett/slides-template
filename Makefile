@@ -1,21 +1,13 @@
-HANDOUTS:=$(patsubst %.md,%_handout.pdf,$(wildcard [!R][!E][!A][!D]*.md))
-SLIDES:=$(patsubst %.md,%_slides.pdf,$(wildcard [!R][!E][!A][!D]*.md))
+SLIDES:=$(patsubst %.md,%.pdf,$(wildcard *_slides.md))
 
-DO_PANDOC=pandoc --citeproc -o
+DO_PANDOC=pandoc --citeproc
 
-all: handouts slides
-
-handouts: $(HANDOUTS)
+all: slides
 
 slides: $(SLIDES)
 
-%_slides.pdf: %.md
-	# No references, beamer output.
-	gpp -H $< | $(DO_PANDOC) $@ -t beamer
-
-%_handout.pdf: %.md
-	# References at end, standard pdf output.
-	gpp -H -DHANDOUT=1 $< | $(DO_PANDOC) $@
+%.pdf: %.md
+	$(DO_PANDOC) $< -o $@ -t beamer
 
 clean:
 	rm *.pdf

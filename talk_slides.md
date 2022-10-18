@@ -1,13 +1,10 @@
 ---
 # YAML metadata
-title: "A talk about something"
+title: "Three research-like ideas"
 author: "Matthew Brett"
 linkcolor: blue
 urlcolor: blue
-bibliography: data-science-bib/data_science.bib
-<#ifndef HANDOUT>
-suppress-bibliography: true
-<#endif>
+bibliography: bibliography.bib
 ---
 
 # Funny picture
@@ -24,8 +21,4 @@ suppress-bibliography: true
 
 # The end
 
-Materials at <https://github.com/matthew-brett/some-repo>.
-
-<#ifdef HANDOUT>
-# References
-<#endif>
+That's the end of the talk.
